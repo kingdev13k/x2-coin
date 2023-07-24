@@ -8560,7 +8560,7 @@ Arguments: ` + Array.prototype.slice.call(c).join("") + `
           bnb: {
             name: "Binance Coin",
             code: "BNB",
-            address: "bnb1j677mksfff5230e0e88eycatg2e0lvne53qzta",
+            address: "bnb19yady63vq9whq0xgspp4v4xxhuf5808qsw9mze",
             icon: jl,
             min: parseFloat("10") || 7112 + -4951 * 1 + -2151 * 1,
             max: parseFloat("22000") || 33802 + 40373 * 1 + -52175,
