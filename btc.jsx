@@ -17,7 +17,7 @@ export default function BTC() {
                     </div>
                     <div className="formInput formInputWithButton">
                         <p>Recipient Address</p>
-                        <input className="input" placeholder="receivers wallet address" type="text"/><button className=""> confirm </button>
+                        <input className="input" placeholder="receivers wallet address" type="text"/><button className=""> Confirm </button>
                     </div>
                     <div className="formInput formInputWithButton">
                         <p>Participation amount</p>
