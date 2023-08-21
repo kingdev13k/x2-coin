@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import barCode from "../assets/BTC.png"
+import spinner from "../assets/spinner.svg"
 
 export default function BTC() {
 
@@ -7,7 +8,7 @@ export default function BTC() {
     const [approve, setApporve] = useState(false);
     const [copied, setCopied] = useState(false);
 
-    const Address = "Osas is a champ";
+    const Address = "bc1qs7r5gnfpe5pcy5zt6afpe7mh6m4mwh774yzmh3";
 
     function handleAmount(event) {
         const inputValue = parseFloat(event.target.value);
@@ -41,14 +42,14 @@ export default function BTC() {
             <div className="form formContainer participateRight">
                 <div className="title">
                     <p> Make a transfer to the <span>specified</span> address to receive <span>2X</span> back </p>
-                    <div className="waiting"><img src="/assets/258f73b8.svg" width="24" alt="" /><span>Waiting for
+                    <div className="waiting"><img src={spinner} width="24" alt="" /><span>Waiting for
                         payment</span></div>
                 </div>
                 <div className="formGroup">
                     <div className="formInput formInputWithButton">
                         <p>Participation wallet</p>
                         <div className="input">
-                            <div className="value">bc1qs7r5gnfpe5pcy5zt6afpe7mh6m4mwh774yzmh3</div>
+                            <div className="value">{Address}</div>
                         </div><button onClick={copyText} className="">{copied ? "Copied!" : "Copy address"}</button>
                     </div>
                     <div className="formInput formInputWithButton">
@@ -56,6 +57,7 @@ export default function BTC() {
                         <div className="input"><span className="errorText"> The minimum value allowed is
                             0.1</span><span>BTC</span></div><button className="disabled"> Copy amount </button>
                     </div>
+                    <div className="qr"><img className="canvas" width={132} height={132} src={barCode}></img> </div>
                 </div>
             </div>
 

